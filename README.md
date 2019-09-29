@@ -8,7 +8,7 @@ https://keelii.com/2016/12/22/sku-multi-dimensional-attributes-state-algorithm/
 + 选中的行：不再是除了选中的规格其他规格全部隐藏，会做一个判断，没有可能存在才会隐藏
 + 没有选中的行：规格按钮和已选中的规格组合，判断是否可能存在该规格，没可能存在则隐藏
 
-
+![效果.gif](https://upload-images.jianshu.io/upload_images/11024618-1de60ede01dca802.gif?imageMogr2/auto-orient/strip)
 ## 修改部分：
 
   GoodsPropertyAdapter 类 {
