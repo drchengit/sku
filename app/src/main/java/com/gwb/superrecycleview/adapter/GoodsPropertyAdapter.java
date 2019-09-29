@@ -18,7 +18,9 @@ import com.gwb.superrecycleview.entity.GoodsPropertyBean;
 import com.gwb.superrecycleview.utils.Sku;
 import com.gwb.superrecycleview.ui.wedgit.FlowLayout;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,7 +33,7 @@ public class GoodsPropertyAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     private static final String TAG = "GoodsPropertyAdapter";
     private final String COLOR_SELECT = "#ffffff";
     private final String COLOR_EMPTY = "#BBBBBB";
-    private final String COLOR_NORMAL = "#6D6D6D";
+    private final String COLOR_NORMAL = "#ffffff";
     //sku 后的库存子集合
     public Map<String, GoodsPropertyBean.StockGoodsBean> result;
     private List<GoodsPropertyBean.AttributesBean> mAttributes;
@@ -170,24 +172,22 @@ public class GoodsPropertyAdapter extends RecyclerView.Adapter<BaseViewHolder> {
 //                    sam //所有已选规格
 
 
-                    Integer[] tmpes = new Integer[sam.keySet().size() + 1];
-                    sam.keySet().toArray(tmpes);
-                    tmpes[sam.size()] = i;
+                    Integer[] arr = new Integer[sam.keySet().size() + 1];
+                    sam.keySet().toArray(arr);
+                    arr[sam.size()] = i;
                     int temp;//临时变量
-                    boolean flag;//是否交换的标志
-                    for (int m = 0; m < tmpes.length - 1; m++) {//冒泡排序
-                        flag = false;
-                        for (int n = tmpes.length - 1; n > m; n--) {
-                            if (tmpes[n] < tmpes[n - 1]) {
-                                temp = tmpes[n];
-                                tmpes[n] = tmpes[n - 1];
-                                tmpes[n - 1] = temp;
-                                flag = true;
+
+                    for(int m=0;m<arr.length-1;m++){//冒泡排序
+                        for(int n=0;n<arr.length-m-1;n++){
+                            if(arr[n]>arr[n+1]){
+                                temp=arr[n];
+                                arr[n]=arr[n+1];
+                                arr[n+1]=temp;
                             }
                         }
-                        if (!false) break;
                     }
-                    for (int key : tmpes) {
+
+                    for (int key : arr) {
                         if (sb.length() != 0) sb.append(";");
                         if (sam.get(key) != null && sam.get(key).trim().length() > 0) {
                             sb.append(sam.get(key));
@@ -198,6 +198,7 @@ public class GoodsPropertyAdapter extends RecyclerView.Adapter<BaseViewHolder> {
                     if (BuildConfig.DEBUG) Log.e("未选行与sam形成路径", i + ":" + sb.toString());
                     if (!result.keySet().contains(sb.toString())) {//不存在则置灰
                         list.remove(spec);
+                        if (BuildConfig.DEBUG) Log.e("remove", spec+":"  +i + ":" + sb.toString()+"  :" +sam.toString()+ Arrays.toString(arr));
                     }
                 }
 
