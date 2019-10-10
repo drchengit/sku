@@ -41,7 +41,7 @@ https://keelii.com/2016/12/22/sku-multi-dimensional-attributes-state-algorithm/
 
 ## 关于优化
   还有优化空间，在https://keelii.com/2016/12/22/sku-multi-dimensional-attributes-state-algorithm/
-最后有记载，但是目前满足了需求,现在还没有优化的计划，
+最后单选流程有记载，但是目前满足了需求,现在还没有优化的计划，
 
 ## 最后
 
