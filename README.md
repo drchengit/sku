@@ -1,4 +1,5 @@
 # SuperRecycleView
+博文 ： https://www.jianshu.com/p/86b6422a78b2
 
 该项目主要是: https://github.com/GongWnbo/SuperRecycleView 项目
 我只是对sku 部分进行了算法优化，选择商品时速度加快了一点，
@@ -44,6 +45,8 @@ https://keelii.com/2016/12/22/sku-multi-dimensional-attributes-state-algorithm/
 最后单选流程有记载，但是目前满足了需求,现在还没有优化的计划，
 
 ## 最后
+
+博文 ： https://www.jianshu.com/p/86b6422a78b2
 
 我只是一个改代码的，如想star 请移步
 + https://github.com/GongWnbo/SuperRecycleView
